@@ -1,0 +1,52 @@
+.card1{
+	background-color:#cc2020;
+	color:#fff;
+}
+.card2{
+	background-color:#1a0dab;
+	color:#fff;
+}
+.card3{
+	background-color:#17a2b8;
+	color:#fff;
+}
+.card4{
+	background-color:#00ffb2;
+	color:#fff;
+}
+.card5{
+	background-color:#6f42c1;
+	color:#fff;
+}
+.rating{
+	background-color:#fff;
+	border-radius:50%;
+	padding:10px;
+	color:#000;
+	margin-left:20px;
+	font-size:15px;
+}
+#wrapper{
+	background-color:#f4f4f4;
+}
+.sidebar{
+	background-color:#fff;
+	color:#000;
+}
+ul li span{
+	color:#434444;
+}
+.fas{
+	color:#434444;
+}
+.active-list{
+	background-color:#f4f4f4;
+	color:#fff;
+}
+.hover:hover{
+	 box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);   
+}
+.text{
+	color:red;
+}
+
