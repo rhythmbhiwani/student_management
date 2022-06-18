@@ -15,3 +15,7 @@ This only use by Faculty Members. It help the college to store the information a
 3. Parent's Information
 4. Course & Branch Name
 5. Year of Enrollment
+
+# Demo
+
+[Check to see the demo](https://student-management.rhythmbhiwani.me/)
