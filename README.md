@@ -18,4 +18,4 @@ This only use by Faculty Members. It help the college to store the information a
 
 # Demo
 
-[Check to see the demo](https://student-management.rhythmbhiwani.me/)
+[Check to see the demo](https://student-management.rhythmbhiwani.in/)
