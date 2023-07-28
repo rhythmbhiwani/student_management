@@ -12,7 +12,7 @@ if (!$conn) {
 	die("Connection failed: " . $conn->lastErrorMsg());
 }
 $sql = "INSERT INTO student (fname, lname, caddress, paddress, contact, email, roll_no, enroll, branch, eyear, section, parent_email, father_name, mother_name, father_mobile, mother_mobile) VALUES (:fname, :lname, :caddress, :paddress, :contact, :email, :roll_no, :enroll, :branch, :eyear, :section, :parent_email, :father_name, :mother_name, :father_mobile, :mother_mobile)";
-$stmt = $db->prepare($sql);
+$stmt = $conn->prepare($sql);
 // Bind the parameters with values from $_POST
 $stmt->bindParam(':fname', $_POST['fname']);
 $stmt->bindParam(':lname', $_POST['lname']);
@@ -31,12 +31,10 @@ $stmt->bindParam(':mother_name', $_POST['mother_name']);
 $stmt->bindParam(':father_mobile', $_POST['father_code'] . $_POST['fcontact']);
 $stmt->bindParam(':mother_mobile', $_POST['mother_code'] . $_POST['mcontact']);
 
-
-$sql = "insert into student values('" . $_POST['fname'] . "','" . $_POST['lname'] . "','" . $_POST['caddress'] . "','" . $_POST['paddress'] . "','" . $_POST['contact'] . "','" . $_POST['email'] . "','" . $_POST['roll_no'] . "','" . $_POST['enroll'] . "','" . $_POST['branch'] . "','" . $_POST['eyear'] . "','" . $_POST['section'] . "','" . $_POST['pemail'] . "','" . $_POST['father_name'] . "','" . $_POST['mother_name'] . "','" . $_POST['father_code'] . $_POST['fcontact'] . "','" . $_POST['mother_code'] . $_POST['mcontact'] . "');";
 if ($stmt->execute()) {
 	echo "<script>alert('Data Submitted Successfully. Redirecting...')</script>";
 } else {
-	echo "<script>alert('Error inserting data: " . $db->lastErrorMsg() . "')</script>";
+	echo "<script>alert('Error inserting data: " . $conn->lastErrorMsg() . "')</script>";
 }
 ?>
 
