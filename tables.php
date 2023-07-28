@@ -20,8 +20,8 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.css" rel="stylesheet">
-	
-	<link href="css/style.css" rel="stylesheet">
+  
+  <link href="css/style.css" rel="stylesheet">
 
   </head>
 
@@ -37,7 +37,7 @@
 
     </nav>
     <div id="wrapper">
-	
+  
       <!-- Sidebar -->
       <ul class="sidebar navbar-nav bg shadow">
         <li class="nav-item">
@@ -46,13 +46,13 @@
             <span>Dashboard</span>
           </a>
         </li>
-		
-		 <li class="nav-item">
+    
+     <li class="nav-item">
           <a class="nav-link" href="information.php">
              <i class="fas fa-fw fa-user"></i>
             <span>Add Student</span></a>
         </li>
-		
+    
         <li class="nav-item active-list">
           <a class="nav-link" href="tables.php">
             <i class="fas fa-fw fa-table"></i>
@@ -78,20 +78,15 @@
               <i class="fas fa-table"></i>
               Students Record</div>
               <?php
-              $servername="localhost";
-              $username="root";
-              $password="";
-              $dbname="stdmgmtsystem";
-              $conn=new mysqli($servername,$username,$password,$dbname);
-              if ($conn->connect_error) {
-               die("connection failed:".$conn->connect_error);
-              }
-              else
-              {
+              $dbFile = 'std.db';
+              $conn = new SQLite3($dbFile);
+              if (!$conn) {
+                die("Connection failed: " . $conn->lastErrorMsg());
+              } else {
                 $sql = "SELECT * FROM student";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
-            echo "<div class='card-body'>
+                  echo "<div class='card-body'>
               <div class='table-responsive'>
                 <table class='table table-bordered' id='dataTable' width='100%' cellspacing='0'>
                   <thead>
@@ -114,40 +109,38 @@
                     </tr>
                   </thead>
 				  <tbody>";
-                 while($row = $result->fetch_assoc()) {
-                  echo "
+                  while ($row = $result->fetch_assoc()) {
+                    echo "
                     <tr>
-                      <td>".$row['roll_no']."</td>
-                      <td>".$row['enroll']."</td>
-                      <td>".$row['fname']." ".$row['lname']."</td>
-                      <td>".$row['email']."</td>
-                      <td>".$row['contact']."</td>
-                      <td>".$row['branch']."</td>
-                      <td>".$row['eyear']."</td>
-                      <td>".$row['section']."</td>
-					            <td>".$row['caddress']."</td>
-                      <td>".$row['father_name']."</td>
-                      <td>".$row['father_mobile']."</td>
-                      <td>".$row['mother_name']."</td>
-                      <td>".$row['mother_mobile']."</td>
-                      <td>".$row['parent_email']."</td>
-                      <td>".$row['paddress']."</td>
+                      <td>" . $row['roll_no'] . "</td>
+                      <td>" . $row['enroll'] . "</td>
+                      <td>" . $row['fname'] . " " . $row['lname'] . "</td>
+                      <td>" . $row['email'] . "</td>
+                      <td>" . $row['contact'] . "</td>
+                      <td>" . $row['branch'] . "</td>
+                      <td>" . $row['eyear'] . "</td>
+                      <td>" . $row['section'] . "</td>
+					            <td>" . $row['caddress'] . "</td>
+                      <td>" . $row['father_name'] . "</td>
+                      <td>" . $row['father_mobile'] . "</td>
+                      <td>" . $row['mother_name'] . "</td>
+                      <td>" . $row['mother_mobile'] . "</td>
+                      <td>" . $row['parent_email'] . "</td>
+                      <td>" . $row['paddress'] . "</td>
                     </tr>";
                   }
-                    
-                echo "</table>
+
+                  echo "</table>
 				</table>
 				 
               </div>
             </div>";
-             }
-			 else
-			 {
-				 echo "No Data Found";
-			 }
-      }
+                } else {
+                  echo "No Data Found";
+                }
+              }
 
-       ?>
+              ?>
             <div class='card-footer small text-muted'>Geetanjali Institute Of Technical Studies Dabok, Udaipur (Raj.)</div>
           </div>   
         </div>
@@ -166,10 +159,10 @@
 
     </div>
     <!-- /#wrapper -->
-	
-	</div>
-	
-	</div>
+  
+  </div>
+  
+  </div>
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">

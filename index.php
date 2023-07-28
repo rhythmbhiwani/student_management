@@ -20,8 +20,8 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.css" rel="stylesheet">
-	
-	<link href="css/style.css" rel="stylesheet">
+  
+  <link href="css/style.css" rel="stylesheet">
 
   <style type="text/css">
     @media only screen and (orientation: landscape) {
@@ -52,13 +52,13 @@
             <span>Dashboard</span>
           </a>
         </li>
-		
-		 <li class="nav-item">
+    
+     <li class="nav-item">
           <a class="nav-link" href="information.php">
              <i class="fas fa-fw fa-user"></i>
             <span>Add Student</span></a>
         </li>
-		
+    
         <li class="nav-item">
           <a class="nav-link" href="tables.php">
             <i class="fas fa-fw fa-table"></i>
@@ -69,127 +69,122 @@
       <div id="content-wrapper">
 
         <div class="container-fluid">
-		 <div class="card shadow">
+     <div class="card shadow">
           <div class="card-body">
           <h4 class="text-center">Dashboard</h4>
-		  </div>					 
+      </div>					 
         </div><br>
 
          <div class="container">
-		 	
+       
            <!--Project Review-->
-		
-		<div class="row">
-		 <div class="col-lg-8 col-md-8 col-sm-8 col-12 d-block m-auto center">
-		 	
-		<div class="card hover">
-		<div class="card-body">
-		<h4 class="text-center">STUDENT RECORD MANAGEMENT SYSTEM</h4><hr>
-		</div>
-		<p class="container"> 
-		 This only use by Faculty Members.
-		 It  help the college to store the information about students.
+    
+    <div class="row">
+     <div class="col-lg-8 col-md-8 col-sm-8 col-12 d-block m-auto center">
+       
+    <div class="card hover">
+    <div class="card-body">
+    <h4 class="text-center">STUDENT RECORD MANAGEMENT SYSTEM</h4><hr>
+    </div>
+    <p class="container"> 
+     This only use by Faculty Members.
+     It  help the college to store the information about students.
          It shows all the records of students like his <b>branch,year,personal infromation, parents detail</b> also etc.		 
-		</p>
-		 <h6 class="container"><b>In this we use certain type of TECHNOLOGY:</b></h6>
-		 <ul>
-		 <li>HTML-CSS</li>
-		 <li>JAVA SCRIPT</li>
-		 <li>PROCEDURE PHP</li>
-		 <li>MYSQL</li>
-		 <li>BOOTSTRAP</li>
+    </p>
+     <h6 class="container"><b>In this we use certain type of TECHNOLOGY:</b></h6>
+     <ul>
+     <li>HTML-CSS</li>
+     <li>JAVA SCRIPT</li>
+     <li>PROCEDURE PHP</li>
+     <li>MYSQL</li>
+     <li>BOOTSTRAP</li>
          </ul>
-		<ol>
-		<li><h6>Personal Information</h6></li>
-		<li><h6>Contact Details</h6></li>
-		<li><h6>Parent's Information</h6></li>
-		<li><h6>Course & Branch Name</h6></li>
-		<li><h6>Year of Enrollment</h6></li>	
-		</ol>
-		</div>
-		
-		<br>
-		<div class="row">
-		 <div class="col-lg-4 col-md-4 col-sm-4 col-12 d-block m-auto center">
-		 <div class="card shadow">
-		 <div class="card-body">
-		  <h5>Rhythm Biwani</h5>
-		  <p>BackEnd & Database Developer</p>
-		 </div>
-		</div>
-		 </div>
-		 <div class="col-lg-4 col-md-4 col-sm-4 col-12 d-block m-auto center">
-		  <div class="card shadow">
-		 <div class="card-body">
-		  <h5>Pradeep Suthar</h5>
-		  <p>FrontEnd Developer</p>
-		 </div>
-		</div>
-		 </div>
-		 <div class="col-lg-4 col-md-4 col-sm-4 col-12 d-block m-auto center">
-		  <div class="card shadow">
-		 <div class="card-body">
-		  <h5>Shubham Devpura</h5>
-		  <p>FrontEnd & Content Developer</p>
-		 </div>
-		</div>
-		 </div>
-		</div><br><br>		
-		 </div>
-		 <?php
-		 $servername="localhost";
-              $username="root";
-              $password="";
-              $dbname="stdmgmtsystem";
-              $conn=new mysqli($servername,$username,$password,$dbname);
-              if ($conn->connect_error) {
-               die("connection failed:".$conn->connect_error);
-              }
-              else
-			  {
-				  $sql1 = "select * from student";
-				  $sql2 = "select * from student where branch='CSE'";
-				  $sql3 = "select * from student where branch='ME'";
-				  $sql4 = "select * from student where branch='CE'";
-				  $sql5 = "select * from student where branch='AE'";
-				  $result1 = $conn->query($sql1);
-				  $result2 = $conn->query($sql2);
-				  $result3 = $conn->query($sql3);
-				  $result4 = $conn->query($sql4);
-				  $result5 = $conn->query($sql5);
-		 echo "<div class='col-lg-4 col-md-4 col-sm-4 col-12 d-block m-auto center'>
+    <ol>
+    <li><h6>Personal Information</h6></li>
+    <li><h6>Contact Details</h6></li>
+    <li><h6>Parent's Information</h6></li>
+    <li><h6>Course & Branch Name</h6></li>
+    <li><h6>Year of Enrollment</h6></li>	
+    </ol>
+    </div>
+    
+    <br>
+    <div class="row">
+     <div class="col-lg-4 col-md-4 col-sm-4 col-12 d-block m-auto center">
+     <div class="card shadow">
+     <div class="card-body">
+      <h5>Rhythm Biwani</h5>
+      <p>BackEnd & Database Developer</p>
+     </div>
+    </div>
+     </div>
+     <div class="col-lg-4 col-md-4 col-sm-4 col-12 d-block m-auto center">
+      <div class="card shadow">
+     <div class="card-body">
+      <h5>Pradeep Suthar</h5>
+      <p>FrontEnd Developer</p>
+     </div>
+    </div>
+     </div>
+     <div class="col-lg-4 col-md-4 col-sm-4 col-12 d-block m-auto center">
+      <div class="card shadow">
+     <div class="card-body">
+      <h5>Shubham Devpura</h5>
+      <p>FrontEnd & Content Developer</p>
+     </div>
+    </div>
+     </div>
+    </div><br><br>		
+     </div>
+     <?php
+     $dbFile = 'std.db';
+     $conn = new SQLite3($dbFile);
+     if (!$conn) {
+       die("Connection failed: " . $conn->lastErrorMsg());
+     } else {
+       $sql1 = "select * from student";
+       $sql2 = "select * from student where branch='CSE'";
+       $sql3 = "select * from student where branch='ME'";
+       $sql4 = "select * from student where branch='CE'";
+       $sql5 = "select * from student where branch='AE'";
+       $result1 = $conn->query($sql1);
+       $result2 = $conn->query($sql2);
+       $result3 = $conn->query($sql3);
+       $result4 = $conn->query($sql4);
+       $result5 = $conn->query($sql5);
+       echo "<div class='col-lg-4 col-md-4 col-sm-4 col-12 d-block m-auto center'>
 		  <div class='card card1 shadow'>
 		   <div class='card-body'>
-		     <h5>Total Students <span class='rating'>".$result1->num_rows."</span></h5>
+		     <h5>Total Students <span class='rating'>" . $result1->num_rows . "</span></h5>
 		   </div>
           </div><br>
          <div class='card card2 shadow'>
 		   <div class='card-body'>
-		     <h5>CSE Students <span class='rating'>".$result2->num_rows."</span></h5>
+		     <h5>CSE Students <span class='rating'>" . $result2->num_rows . "</span></h5>
 		   </div>
           </div><br>
           <div class='card card3 shadow'>
 		   <div class='card-body'>
-		     <h5>ME Students<span class='rating'>".$result3->num_rows."</span></h5>
+		     <h5>ME Students<span class='rating'>" . $result3->num_rows . "</span></h5>
 		   </div>
           </div><br>
            <div class='card card4 shadow'>
 		   <div class='card-body'>
-		     <h5>CE Students<span class='rating'>".$result4->num_rows."</span></h5>
+		     <h5>CE Students<span class='rating'>" . $result4->num_rows . "</span></h5>
 		   </div>
           </div><br>
           <div class='card card5 shadow'>
 		   <div class='card-body'>
-		     <h5>AE Students<span class='rating'>".$result5->num_rows."</span></h5>
+		     <h5>AE Students<span class='rating'>" . $result5->num_rows . "</span></h5>
 		   </div>
           </div><br>		  
 		  
 		 </div>
 		</div>";
-		
-			  }
-		?>
-		   <!-- Sticky Footer -->
+
+     }
+     ?>
+       <!-- Sticky Footer -->
         <footer class="sticky-footer">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
@@ -201,8 +196,8 @@
       <!-- /.content-wrapper -->
     </div>
     <!-- /#wrapper -->
-	</div>
-	</div>
+  </div>
+  </div>
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fas fa-angle-up"></i>

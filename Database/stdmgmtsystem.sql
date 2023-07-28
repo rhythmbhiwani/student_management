@@ -1,22 +1,12 @@
--- phpMyAdmin SQL Dump
--- version 4.8.3
--- https://www.phpmyadmin.net/
+-- SQLite3 SQL Dump
+-- version 3.35.5
 --
 -- Host: 127.0.0.1
 -- Generation Time: Oct 23, 2018 at 01:47 PM
--- Server version: 10.1.35-MariaDB
--- PHP Version: 7.2.9
+-- SQLite Version: 3.35.5
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+PRAGMA foreign_keys=off;
+BEGIN TRANSACTION;
 
 --
 -- Database: `stdmgmtsystem`
@@ -36,18 +26,16 @@ CREATE TABLE `student` (
   `contact` varchar(15) NOT NULL,
   `email` varchar(100) NOT NULL,
   `roll_no` varchar(10) NOT NULL,
-  `enroll` int(20) NOT NULL,
+  `enroll` INTEGER NOT NULL,
   `branch` varchar(50) NOT NULL,
-  `eyear` year(4) NOT NULL,
+  `eyear` INTEGER NOT NULL,
   `section` varchar(1) NOT NULL,
   `parent_email` varchar(100) NOT NULL,
   `father_name` varchar(100) NOT NULL,
   `mother_name` varchar(100) NOT NULL,
   `father_mobile` varchar(15) NOT NULL,
   `mother_mobile` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-COMMIT;
+);
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+COMMIT;
+PRAGMA foreign_keys=on;
