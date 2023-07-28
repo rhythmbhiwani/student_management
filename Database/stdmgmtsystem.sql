@@ -43,8 +43,9 @@ CREATE TABLE `student` (
 
 INSERT INTO `student` (fname, lname, caddress, paddress, contact, email, roll_no, enroll, branch, eyear, section, parent_email, father_name, mother_name, father_mobile, mother_mobile)
 VALUES
-  ('John', 'Doe', '123 Main Street', '456 Elm Street', '555-1234', 'john.doe@example.com', '2023001', 2023001, 'Computer Science', 2023, 'A', 'johndoe.parent@example.com', 'John Doe Sr.', 'Jane Doe', '555-5678', '555-8765'),
-  ('Jane', 'Smith', '789 Oak Avenue', '987 Maple Avenue', '555-5678', 'jane.smith@example.com', '2023002', 2023002, 'Electrical Engineering', 2023, 'B', 'janesmith.parent@example.com', 'Michael Smith', 'Emily Smith', '555-9876', '555-6543');
+  ('Rhythm', 'Bhiwani', 'Ajmer', 'Rajasthan', '555-1234', 'rhythmbhiwani@example.com', '17EGICS090', 2023000, 'CSE', 2017, 'B', 'rhythm.parent@example.com', 'Mr. Navin Bhiwani', 'Mrs. Rekha Mathur', '555-5678', '555-8765'),
+  ('John', 'Doe', '123 Main Street', '456 Elm Street', '555-1234', 'john.doe@example.com', '17EGICS123', 2023001, 'CSE', 2023, 'A', 'johndoe.parent@example.com', 'John Doe Sr.', 'Jane Doe', '555-5678', '555-8765'),
+  ('Jane', 'Smith', '789 Oak Avenue', '987 Maple Avenue', '555-5678', 'jane.smith@example.com', '17EGICS124', 2023002, 'ME', 2023, 'B', 'janesmith.parent@example.com', 'Michael Smith', 'Emily Smith', '555-9876', '555-6543');
 
 COMMIT;
 PRAGMA foreign_keys=on;
