@@ -12,6 +12,7 @@ ENV TZ=Asia/Kolkata \
 # Install PHP and SQLite3
 RUN apt install php7.4 -y
 RUN apt install php7.4-sqlite3 -y
+RUN apt install sqlite3 -y
 
 # Set up the working directory and copy files
 WORKDIR /var/www/html
