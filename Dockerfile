@@ -21,11 +21,12 @@ RUN rm index.html
 COPY . /var/www/html
 
 # Set permissions for the SQLite database file and the parent directory
+RUN sqlite3 /var/www/html/std.db < /var/www/html/Database/stdmgmtsystem.sql
+
 RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R 755 /var/www/html
 RUN chmod -R 777 /var/www/html/std.db
 
-RUN sqlite3 /var/www/html/std.db < /var/www/html/Database/stdmgmtsystem.sql
 
 RUN systemctl enable apache2.service
 EXPOSE 80
