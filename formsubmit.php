@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-$dbFile = 'std.db';
+$dbFile = '/var/www/html/std.db';
 $conn = new SQLite3($dbFile);
 if (!$conn) {
 	die("Connection failed: " . $conn->lastErrorMsg());
