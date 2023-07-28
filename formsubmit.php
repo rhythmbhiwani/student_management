@@ -6,35 +6,20 @@
 </head>
 <body>
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 $dbFile = '/var/www/html/std.db';
 $conn = new SQLite3($dbFile);
 if (!$conn) {
+	echo "<script>alert('Error: " . $conn->lastErrorMsg() . "')</script>";
 	die("Connection failed: " . $conn->lastErrorMsg());
 }
-$sql = "INSERT INTO student (fname, lname, caddress, paddress, contact, email, roll_no, enroll, branch, eyear, section, parent_email, father_name, mother_name, father_mobile, mother_mobile) VALUES (:fname, :lname, :caddress, :paddress, :contact, :email, :roll_no, :enroll, :branch, :eyear, :section, :parent_email, :father_name, :mother_name, :father_mobile, :mother_mobile)";
-$stmt = $conn->prepare($sql);
-// Bind the parameters with values from $_POST
-$stmt->bindParam(':fname', $_POST['fname']);
-$stmt->bindParam(':lname', $_POST['lname']);
-$stmt->bindParam(':caddress', $_POST['caddress']);
-$stmt->bindParam(':paddress', $_POST['paddress']);
-$stmt->bindParam(':contact', $_POST['contact']);
-$stmt->bindParam(':email', $_POST['email']);
-$stmt->bindParam(':roll_no', $_POST['roll_no']);
-$stmt->bindParam(':enroll', $_POST['enroll']);
-$stmt->bindParam(':branch', $_POST['branch']);
-$stmt->bindParam(':eyear', $_POST['eyear']);
-$stmt->bindParam(':section', $_POST['section']);
-$stmt->bindParam(':parent_email', $_POST['pemail']);
-$stmt->bindParam(':father_name', $_POST['father_name']);
-$stmt->bindParam(':mother_name', $_POST['mother_name']);
-$stmt->bindParam(':father_mobile', $_POST['father_code'] . $_POST['fcontact']);
-$stmt->bindParam(':mother_mobile', $_POST['mother_code'] . $_POST['mcontact']);
-
-if ($stmt->execute()) {
+$sql = "insert into student values('" . $_POST['fname'] . "','" . $_POST['lname'] . "','" . $_POST['caddress'] . "','" . $_POST['paddress'] . "','" . $_POST['contact'] . "','" . $_POST['email'] . "','" . $_POST['roll_no'] . "','" . $_POST['enroll'] . "','" . $_POST['branch'] . "','" . $_POST['eyear'] . "','" . $_POST['section'] . "','" . $_POST['pemail'] . "','" . $_POST['father_name'] . "','" . $_POST['mother_name'] . "','" . $_POST['father_code'] . $_POST['fcontact'] . "','" . $_POST['mother_code'] . $_POST['mcontact'] . "');";
+if ($conn->query($sql)) {
 	echo "<script>alert('Data Submitted Successfully. Redirecting...')</script>";
 } else {
-	echo "<script>alert('Error inserting data: " . $conn->lastErrorMsg() . "')</script>";
+	echo "<script>alert('Data Not Submitted Successfully')</script>";
 }
 ?>
 
