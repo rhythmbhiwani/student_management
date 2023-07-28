@@ -92,54 +92,51 @@
 
                 if ($rowCount > 0) {
                   echo "<div class='card-body'>
-              <div class='table-responsive'>
-                <table class='table table-bordered' id='dataTable' width='100%' cellspacing='0'>
-                  <thead>
-                    <tr>
-					            <th>Roll No.</th>
-                      <th>Enrollment No</th>
-                      <th>Name</th>
-                      <th>Student Email</th>
-                      <th>Mobile No</th>
-                      <th>Branch</th>
-                      <th>Enrollment Year</th>
-					            <th>Section</th>
-                      <th>Current Address</th>
-                      <th>Father's Name</th>
-                      <th>Father's Mob No</th>
-                      <th>Mother's Name</th>
-                      <th>Mother's Mob No</th>
-                      <th>Parent's Email</th>
-                      <th>Parent's Address</th>
-                    </tr>
-                  </thead>
-				  <tbody>";
-                  while ($row = $result->fetch_assoc()) {
+                    <div class='table-responsive'>
+                      <table class='table table-bordered' id='dataTable' width='100%' cellspacing='0'>
+                        <thead>
+                          <tr>
+                            <th>Roll No.</th>
+                            <th>Enrollment No</th>
+                            <th>Name</th>
+                            <th>Student Email</th>
+                            <th>Mobile No</th>
+                            <th>Branch</th>
+                            <th>Enrollment Year</th>
+                            <th>Section</th>
+                            <th>Current Address</th>
+                            <th>Father's Name</th>
+                            <th>Father's Mob No</th>
+                            <th>Mother's Name</th>
+                            <th>Mother's Mob No</th>
+                            <th>Parent's Email</th>
+                            <th>Parent's Address</th>
+                          </tr>
+                        </thead>
+                        <tbody>";
+
+                  while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
                     echo "
-                    <tr>
-                      <td>" . $row['roll_no'] . "</td>
-                      <td>" . $row['enroll'] . "</td>
-                      <td>" . $row['fname'] . " " . $row['lname'] . "</td>
-                      <td>" . $row['email'] . "</td>
-                      <td>" . $row['contact'] . "</td>
-                      <td>" . $row['branch'] . "</td>
-                      <td>" . $row['eyear'] . "</td>
-                      <td>" . $row['section'] . "</td>
-					            <td>" . $row['caddress'] . "</td>
-                      <td>" . $row['father_name'] . "</td>
-                      <td>" . $row['father_mobile'] . "</td>
-                      <td>" . $row['mother_name'] . "</td>
-                      <td>" . $row['mother_mobile'] . "</td>
-                      <td>" . $row['parent_email'] . "</td>
-                      <td>" . $row['paddress'] . "</td>
-                    </tr>";
+                      <tr>
+                        <td>" . $row['roll_no'] . "</td>
+                        <td>" . $row['enroll'] . "</td>
+                        <td>" . $row['fname'] . " " . $row['lname'] . "</td>
+                        <td>" . $row['email'] . "</td>
+                        <td>" . $row['contact'] . "</td>
+                        <td>" . $row['branch'] . "</td>
+                        <td>" . $row['eyear'] . "</td>
+                        <td>" . $row['section'] . "</td>
+                        <td>" . $row['caddress'] . "</td>
+                        <td>" . $row['father_name'] . "</td>
+                        <td>" . $row['father_mobile'] . "</td>
+                        <td>" . $row['mother_name'] . "</td>
+                        <td>" . $row['mother_mobile'] . "</td>
+                        <td>" . $row['parent_email'] . "</td>
+                        <td>" . $row['paddress'] . "</td>
+                      </tr>";
                   }
 
-                  echo "</table>
-				</table>
-				 
-              </div>
-            </div>";
+                  echo "</tbody></table></div></div>";
                 } else {
                   echo "No Data Found";
                 }
