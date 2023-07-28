@@ -85,7 +85,12 @@
               } else {
                 $sql = "SELECT * FROM student";
                 $result = $conn->query($sql);
-                if ($result->rowCount() > 0) {
+                $rowCount = 0;
+                while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+                  $rowCount++;
+                }
+
+                if ($rowCount > 0) {
                   echo "<div class='card-body'>
               <div class='table-responsive'>
                 <table class='table table-bordered' id='dataTable' width='100%' cellspacing='0'>
