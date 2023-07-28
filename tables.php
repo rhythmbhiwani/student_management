@@ -85,7 +85,7 @@
               } else {
                 $sql = "SELECT * FROM student";
                 $result = $conn->query($sql);
-                if ($result->num_rows > 0) {
+                if ($result->rowCount() > 0) {
                   echo "<div class='card-body'>
               <div class='table-responsive'>
                 <table class='table table-bordered' id='dataTable' width='100%' cellspacing='0'>

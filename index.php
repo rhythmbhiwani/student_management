@@ -155,27 +155,27 @@
        echo "<div class='col-lg-4 col-md-4 col-sm-4 col-12 d-block m-auto center'>
 		  <div class='card card1 shadow'>
 		   <div class='card-body'>
-		     <h5>Total Students <span class='rating'>" . $result1->num_rows . "</span></h5>
+		     <h5>Total Students <span class='rating'>" . $result1->rowCount() . "</span></h5>
 		   </div>
           </div><br>
          <div class='card card2 shadow'>
 		   <div class='card-body'>
-		     <h5>CSE Students <span class='rating'>" . $result2->num_rows . "</span></h5>
+		     <h5>CSE Students <span class='rating'>" . $result2->rowCount() . "</span></h5>
 		   </div>
           </div><br>
           <div class='card card3 shadow'>
 		   <div class='card-body'>
-		     <h5>ME Students<span class='rating'>" . $result3->num_rows . "</span></h5>
+		     <h5>ME Students<span class='rating'>" . $result3->rowCount() . "</span></h5>
 		   </div>
           </div><br>
            <div class='card card4 shadow'>
 		   <div class='card-body'>
-		     <h5>CE Students<span class='rating'>" . $result4->num_rows . "</span></h5>
+		     <h5>CE Students<span class='rating'>" . $result4->rowCount() . "</span></h5>
 		   </div>
           </div><br>
           <div class='card card5 shadow'>
 		   <div class='card-body'>
-		     <h5>AE Students<span class='rating'>" . $result5->num_rows . "</span></h5>
+		     <h5>AE Students<span class='rating'>" . $result5->rowCount() . "</span></h5>
 		   </div>
           </div><br>		  
 		  
